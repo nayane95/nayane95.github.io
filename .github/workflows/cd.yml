@@ -1,33 +1,14 @@
-name: cd
-
-on: [push, pull_request]
-
+name: Build Vue
+on: [push]
 jobs:
-  cd:
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-        node: [14]
-
+  build_vue:
+    runs-on: ubuntu-latest
+    name: Build Vue
     steps:
-      - name: Checkout
-        uses: actions/checkout@master
-
-      - name: Setup node env
-        uses: actions/setup-node@v2.1.2
-        with:
-          node-version: ${{ matrix.node }}
-
-      - name: Install dependencies
-        run: yarn
-
-      - name: Generate
-        run: yarn generate
-
-      - name: Deploy
-        uses: actions/checkout@v2
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+    - uses: actions/checkout@v2
+    - id: Build-Vue
+      uses: ashkantaravati/NuxtToGithubPages@v1.0
+      with:
+        username: 'nayane95'
+        reponame: 'nayane95.github.io'
+        token: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
