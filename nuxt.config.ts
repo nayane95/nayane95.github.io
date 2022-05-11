@@ -9,4 +9,8 @@ export default defineNuxtConfig({
 		},
 	},
 	buildModules: ["@nuxtjs/tailwindcss"],
+	target: "static",
+	router: {
+		base: "nayane95.github.io",
+	},
 });
