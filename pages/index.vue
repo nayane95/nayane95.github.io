@@ -6,7 +6,7 @@
 			<h2 class="text-neutral-600 text-2xl">Hi</h2>
 			<h2 class="text-neutral-600 text-xl">I'm Nayanajith</h2>
 			<h2 class="text-neutral-600 text-xl">AKA DOiZ</h2>
-			<img class="h-2/3" src="assets/images/home_me_out_circle.png" alt="" />
+			<img class="h-2/3" src="~/assets/home_me_out_circle.png" alt="" />
 		</div>
 	</NuxtLayout>
 </template>
